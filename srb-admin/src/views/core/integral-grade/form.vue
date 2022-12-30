@@ -33,11 +33,27 @@ export default {
       integralGrade: {}, //积分等级对象
     }
   },
+  created() {
+    if (this.$route.params.id) {
+      this.fetchById(this.$route.params.id)
+    }
+  },
   methods: {
+    fetchById(id) {
+      integralGradeApi.getById(id).then((response) => {
+        this.integralGrade = response.data.record
+      })
+    },
     saveOrUpdate() {
       //调用新增
       this.saveBtnDisabled = true
-      this.saveData()
+      // debugger
+      if (!this.integralGrade.id) {
+        this.saveData()
+      } else {
+        this.updateData()
+      }
+
       //调用更新
     },
     saveData() {
@@ -49,7 +65,15 @@ export default {
         this.$router.push('/core/integral-grade/list')
       })
     },
-    updateData() {},
+    updateData() {
+      integralGradeApi.updateById(this.integralGrade).then((response) => {
+        this.$message({
+          type: 'success',
+          message: response.message,
+        })
+        this.$router.push('/core/integral-grade/list')
+      })
+    },
   },
 }
 </script>

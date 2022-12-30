@@ -21,10 +21,17 @@ export default {
       data: integralGrade,
     })
   },
-  getById() {
+  getById(id) {
     return request({
       url: '/admin/core/integralGrade/get/' + id,
       method: 'get',
+    })
+  },
+  updateById(integralGrade) {
+    return request({
+      url: '/admin/core/integralGrade/update',
+      method: 'put',
+      data: integralGrade,
     })
   },
 }
