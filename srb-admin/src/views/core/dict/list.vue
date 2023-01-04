@@ -41,18 +41,41 @@
         <el-button @click="dialogVisible = false">取消</el-button>
       </div>
     </el-dialog>
+
+    <el-table :data="list" border row-key="id" lazy :load="load">
+      <el-table-column label="名称" align="left" prop="name" />
+      <el-table-column label="编码" prop="dictCode" />
+      <el-table-column label="值" align="left" prop="value" />
+    </el-table>
   </div>
 </template>
 
 <script>
+import dictApi from '@/api/core/dict'
+
 export default {
   data() {
     return {
       dialogVisible: false, //对话框是否显示
       BASE_API: process.env.VUE_APP_BASE_API, //获取后端接口地址
+      list: [],
     }
   },
+  created() {
+    this.fetchData()
+  },
   methods: {
+    load(tree, treeNode, resolve) {
+      dictApi.listByParentId(tree.id).then((response) => {
+        resolve(response.data.list)
+      })
+    },
+    fetchData() {
+      dictApi.listByParentId(1).then((response) => {
+        this.list = response.data.list
+      })
+    },
+
     // 上传多于一个文件时
     fileUploadExceed() {
       this.$message.warning('只能选取一个文件')
