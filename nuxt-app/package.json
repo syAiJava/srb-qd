@@ -1,0 +1,13 @@
+{
+  "name": "my-app",
+  "scripts": {
+    "dev": "set NODE_OPTIONS=--openssl-legacy-provider&&nuxt"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.12.3",
+    "nuxt": "^2.14.10"
+  },
+  "devDependencies": {
+    "@nuxt/types": "~2.14.0"
+  }
+}
