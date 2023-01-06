@@ -1,8 +1,32 @@
 [
   {
-    "name": "",
-    "path": "",
-    "component": "C:\\\\Users\\\\26370\\\\Desktop\\\\resource\\\\VscodeProject\\\\srb\\\\nuxt-app\\\\node_modules\\\\@nuxt\\\\vue-app\\\\template\\\\pages\\\\index.vue",
-    "_name": "_04beceee"
+    "name": "about",
+    "path": "/about",
+    "component": "C:\\\\Users\\\\26370\\\\Desktop\\\\resource\\\\VscodeProject\\\\srb\\\\nuxt-app\\\\pages\\\\about.vue",
+    "chunkName": "pages/about"
+  },
+  {
+    "name": "lend",
+    "path": "/lend",
+    "component": "C:\\\\Users\\\\26370\\\\Desktop\\\\resource\\\\VscodeProject\\\\srb\\\\nuxt-app\\\\pages\\\\lend\\\\index.vue",
+    "chunkName": "pages/lend/index"
+  },
+  {
+    "name": "user-user",
+    "path": "/user/user",
+    "component": "C:\\\\Users\\\\26370\\\\Desktop\\\\resource\\\\VscodeProject\\\\srb\\\\nuxt-app\\\\pages\\\\user\\\\user.vue",
+    "chunkName": "pages/user/user"
+  },
+  {
+    "name": "lend-id",
+    "path": "/lend/:id",
+    "component": "C:\\\\Users\\\\26370\\\\Desktop\\\\resource\\\\VscodeProject\\\\srb\\\\nuxt-app\\\\pages\\\\lend\\\\_id.vue",
+    "chunkName": "pages/lend/_id"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "C:\\\\Users\\\\26370\\\\Desktop\\\\resource\\\\VscodeProject\\\\srb\\\\nuxt-app\\\\pages\\\\index.vue",
+    "chunkName": "pages/index"
   }
 ]

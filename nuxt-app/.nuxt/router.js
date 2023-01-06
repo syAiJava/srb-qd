@@ -4,7 +4,11 @@ import { normalizeURL } from '@nuxt/ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _04beceee = () => interopDefault(import('..\\node_modules\\@nuxt\\vue-app\\template\\pages\\index.vue' /* webpackChunkName: "" */))
+const _0f49d889 = () => interopDefault(import('..\\pages\\about.vue' /* webpackChunkName: "pages/about" */))
+const _65ba207f = () => interopDefault(import('..\\pages\\lend\\index.vue' /* webpackChunkName: "pages/lend/index" */))
+const _0d32d7ec = () => interopDefault(import('..\\pages\\user\\user.vue' /* webpackChunkName: "pages/user/user" */))
+const _b3f792b2 = () => interopDefault(import('..\\pages\\lend\\_id.vue' /* webpackChunkName: "pages/lend/_id" */))
+const _2f01b34e = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
 
 // TODO: remove in Nuxt 3
 const emptyFn = () => {}
@@ -23,8 +27,25 @@ export const routerOptions = {
   scrollBehavior,
 
   routes: [{
-    path: "",
-    component: _04beceee
+    path: "/about",
+    component: _0f49d889,
+    name: "about"
+  }, {
+    path: "/lend",
+    component: _65ba207f,
+    name: "lend"
+  }, {
+    path: "/user/user",
+    component: _0d32d7ec,
+    name: "user-user"
+  }, {
+    path: "/lend/:id",
+    component: _b3f792b2,
+    name: "lend-id"
+  }, {
+    path: "/",
+    component: _2f01b34e,
+    name: "index"
   }],
 
   fallback: false
