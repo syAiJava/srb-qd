@@ -119,10 +119,35 @@ export default {
 
   methods: {
     //显示用户信息
-    showInfo() {},
+    showInfo() {
+      // debugger
+      let userInfo = cookie.get('userInfo')
+      if (!userInfo) {
+        console.log('cookie不存在')
+        this.userInfo = null
+        return
+      }
+      userInfo = JSON.parse(userInfo)
+      //先在服务器端校验token
+      this.$axios({
+        url: '/api/core/userInfo/checkToken',
+        method: 'get',
+        headers: {
+          //如果token校验成功，再展示user信息
+          token: userInfo.token,
+        },
+      }).then((response) => {
+        console.log('校验成功')
+        this.userInfo = userInfo
+      })
+    },
 
     //退出
-    logout() {},
+    logout() {
+      cookie.set('userInfo', '')
+      //跳转页面
+      window.location.href = '/login'
+    },
   },
 }
 </script>

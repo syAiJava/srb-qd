@@ -48,7 +48,15 @@ export default {
 
   methods: {
     //登录
-    login() {},
+    login() {
+      this.$axios
+        .$post('/api/core/userInfo/login', this.userInfo)
+        .then((response) => {
+          // 把用户信息存在cookie中
+          cookie.set('userInfo', response.data.userInfo)
+          window.location.href = '/user'
+        })
+    },
   },
 }
 </script>
