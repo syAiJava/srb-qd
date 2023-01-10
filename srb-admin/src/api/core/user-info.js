@@ -8,4 +8,16 @@ export default {
       params: searchObj,
     })
   },
+  lock(id, status) {
+    return request({
+      url: `/admin/core/userInfo/lock/${id}/${status}`,
+      method: 'put',
+    })
+  },
+  getuserLoginRecordTop50(userId) {
+    return request({
+      url: `/admin/core/userLoginRecord/listTop50/${userId}`,
+      method: 'get',
+    })
+  },
 }
